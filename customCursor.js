@@ -14,7 +14,7 @@ const main = document.querySelector('main')
 const contactButton = document.querySelector('#header-contact')
 const headerIcon = document.querySelector('#header-icon')
 
-hoverList = [contactButton, headerIcon]
+const hoverList = document.querySelectorAll('.clickable')
 
 window.addEventListener("mousemove", (e)=> {
     document.body.style.cursor = 'none'
@@ -39,7 +39,11 @@ main.addEventListener('scroll', ()=> {
         headerIcon.classList.add('hidden')
         cursor.classList.add('scroll')
         cursor.innerHTML = "Scroll"
+        document.body.classList.remove('phase2')
     }
+
+    document.documentElement.style.setProperty("--background-x-percentage", (Math.cos(main.scrollTop/main.clientHeight/2*Math.PI) * 50 + 50) + "%");
+    document.documentElement.style.setProperty("--background-y-percentage", (Math.sin(main.scrollTop/main.clientHeight/2*Math.PI) * 75 + 75) + "%");
 })
 
 hoverList.forEach(el => {
@@ -50,7 +54,6 @@ hoverList.forEach(el => {
         cursor.classList.remove('pointer');
     });
 });
-
 headerIcon.addEventListener('click', ()=>{
     headerIcon.classList.add('hidden')
     cursor.classList.add('scroll')

@@ -25,11 +25,6 @@ html, body {
     --background-y-percentage : 50%;
 }
 
-:root.phase2 {
-    --background-x-percentage : 50%;
-    --background-y-percentage : 100%;
-}
-
 .hidden {
     opacity: 0;
     pointer-events: none;
@@ -102,7 +97,7 @@ main::-webkit-scrollbar {
     height: 100vh;
     z-index: -1;
 
-    background: radial-gradient(circle at var(--background-x-percentage) var(--background-y-percentage), #18141D 0%, #2A263A 100%);
+    background: radial-gradient(circle at var(--background-x-percentage) var(--background-y-percentage), #110e15 0%, #2A263A 100%);
 }
 
 .main-section {
