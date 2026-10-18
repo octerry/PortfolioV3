@@ -50,3 +50,10 @@ hoverList.forEach(el => {
         cursor.classList.remove('pointer');
     });
 });
+
+headerIcon.addEventListener('click', ()=>{
+    headerIcon.classList.add('hidden')
+    cursor.classList.add('scroll')
+    cursor.innerHTML = "Scroll"
+    main.scrollTo({top: 0, behavior: 'smooth'})
+})

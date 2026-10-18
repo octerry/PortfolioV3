@@ -161,6 +161,7 @@ main::-webkit-scrollbar {
 /* ============= Numbers Section ============= */
 #clock-section {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -183,6 +184,49 @@ main::-webkit-scrollbar {
 .clock-text {
     font-family: "Mooli";
     font-weight: 100;
+}
+
+#clock-section-numbers {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+
+    margin-top: 2em;
+}
+
+.clock-number-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2em;
+}
+
+.clock-number-number {
+    font-family: "Momo Trust Display";
+    font-size: 7em;
+    line-height: 100%;
+}
+
+.clock-number-title {
+    font-family: "Outfit";
+    font-size: 1.7em;
+    font-weight: 400;
+    line-height: 100%;
+}
+
+.clock-number-subsection {
+    width: 12em;
+
+    margin-top: 2em;
+    padding: .7em;
+
+    border: 1px #ffffff80 solid;
+    border-radius: 1em;
+}
+
+.clock-number-description {
+    font-family: "Outfit";
 }
 
 /* ============== CURSOR =============== */
