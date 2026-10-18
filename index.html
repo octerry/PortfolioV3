@@ -18,7 +18,9 @@ MADE ON EARTH BY HUMANS
     <link rel="icon" type="image/png" href="/source/favicon_lightmode.svg" media="(prefers-color-scheme: light)">
     <link rel="icon" type="image/png" href="/source/octerry_logo.svg" media="(prefers-color-scheme: dark)">
     <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
+    <script defer src="customCursor.js"></script>
+    <script defer src="typeAnimation.js"></script>
+    <script defer src="clock.js"></script>
 </head>
 <body>
     <header>
@@ -35,15 +37,16 @@ MADE ON EARTH BY HUMANS
                 <div id="homescreen-infos">
                     <h1 id="homescreen-title">Terry Segaunes</h1>
                     <div id="homescreen-description-section">
-                        <p id="homescreen-description">Etudiant dans le Développement Web et Innovations Informatiques</p>
+                        <p id="homescreen-description"></p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="main-section">
+        <div class="main-section" id="clock-section">
             <div id="time-count">
-                <h1 id="day-count">Depuis 1 an, 30 jours,</h1>
-                <h2 id="hour-count">2 heures, 30 minutes et 29 secondes</h2>
+                <h1 class="clock-text" id="day-count">Depuis 1 an, 30 jours,</h1>
+                <h2 class="clock-text" id="hour-count">2 heures, 30 minutes et 29 secondes</h2>
+                <h2 class="clock-text">J'ai réalisé</h2>
             </div>
         </div>
         <div class="main-section">

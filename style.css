@@ -155,7 +155,34 @@ main::-webkit-scrollbar {
 #homescreen-description {
     font-family: "IBM Plex Mono";
     font-size: 1em;
-    color: #ffffff80
+    color: #ffffff80;
+}
+
+/* ============= Numbers Section ============= */
+#clock-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#time-count {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#day-count {
+    font-size: 1.8em;
+}
+
+#hour-count {
+    margin-bottom: 1em;
+    font-size: 1em;
+}
+
+.clock-text {
+    font-family: "Mooli";
+    font-weight: 100;
 }
 
 /* ============== CURSOR =============== */
