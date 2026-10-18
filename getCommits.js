@@ -49,7 +49,7 @@ if (!pseudo) {
 githubStats(pseudo)
   .then(({ pseudo, repos, commits }) => {
     commitNumber.innerHTML = commits
-    commitDescription.innerHTML.replace('27', repos)
+    commitDescription.innerHTML = commitDescription.innerHTML.replace('27', repos)
   })
   .catch((err) => {
     console.error(err.message);
