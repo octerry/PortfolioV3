@@ -50,18 +50,18 @@ function display() {
 }
 
 function calculateTime() {
-    years = Math.round(secondsDifference / 31_536_000) // 31_536_000 = 60 * 60 * 24 * 365
+    years = Math.floor(secondsDifference / 31_536_000) // 31_536_000 = 60 * 60 * 24 * 365
     secondsDifference %= 31_536_000
 
-    days = Math.round(secondsDifference / 86_400) // 86_400 = 60 * 60 * 24
+    days = Math.floor(secondsDifference / 86_400) // 86_400 = 60 * 60 * 24
     secondsDifference %= 86_400
 
-    hours = Math.round(secondsDifference / 3_600) // 3_600 = 60 * 60
+    hours = Math.floor(secondsDifference / 3_600) // 3_600 = 60 * 60
     secondsDifference %= 3_600
 
-    minutes = Math.round(secondsDifference / 60)
+    minutes = Math.floor(secondsDifference / 60)
     secondsDifference %= 60
-    secondsDifference = Math.round(secondsDifference)
+    secondsDifference = Math.floor(secondsDifference)
 }
 
 function updateTime() {

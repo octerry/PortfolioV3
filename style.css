@@ -8,7 +8,7 @@
 \_____/ \_____]    |__|    |_____] |_| \_\ |_| \_\    |__|
 MADE ON EARTH BY HUMANS */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@300;400;500;600;700&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Momo+Trust+Display&family=Mooli&family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@300;400;500;600;700&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Intel+One+Mono:ital,wght@0,300..700;1,300..700&family=Momo+Trust+Display&family=Momo+Trust+Sans:wght@200..800&family=Mooli&family=Nanum+Gothic+Coding&family=Outfit:wght@100..900&display=swap');
 
 * {
     margin: 0;
@@ -212,7 +212,7 @@ main::-webkit-scrollbar {
 }
 
 .clock-number-subsection {
-    width: 12em;
+    width: 20em;
 
     margin-top: 2em;
     padding: .7em;
@@ -245,6 +245,71 @@ main::-webkit-scrollbar {
     .clock-number-description {
         font-size: .7em;
     }
+}
+
+/* ============== Projet Section =============== */
+#project-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#project-section-title {
+    font-family: "Momo Trust Display";
+    margin-bottom: .7em;
+}
+
+#project-content {
+    display: grid;
+    grid-template-columns: 300px 300px;
+    grid-row: auto auto;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+
+    gap: 1em;
+}
+
+.project-unit {
+    border: 1px #ffffff80 solid;
+    border-radius: .5em;
+    padding: .5em;
+
+    transition: .3s box-shadow ease-out, .3s background-color ease-out, .3s transform ease-out;
+}
+
+.project-unit.clickable:hover {
+    background-color: #00000040;
+    box-shadow: 0 0 15px #00000090;
+    transform: rotate(-1deg) translateY(-3px);
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.project-number {
+    font-family: 'Intel One Mono';
+    font-weight: 100;
+    font-size: .7em;
+}
+
+.project-title {
+    font-family: 'Nanum Gothic Coding';
+    font-size: 1em;
+}
+
+.project-icon {
+    width: .7em;
+}
+
+.project-description {
+    margin: 1em;
+    font-family: "Momo Trust Sans";
+    font-weight: 100;
+    font-size: .8em;
 }
 
 /* ============== CURSOR =============== */
