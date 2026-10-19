@@ -322,6 +322,33 @@ main::-webkit-scrollbar {
     font-size: 1.2vw;
 }
 
+#project-modal {
+    position: relative;
+    display: flex;
+    z-index: 0;
+    bottom: 15em;
+
+    text-decoration: none;
+
+    background: radial-gradient(#ffffff20 0%, #ffffff50 100%);
+    backdrop-filter: blur(2px);
+    border: 1px #fff solid;
+    border-radius: 1em;
+
+    transition: .2s opacity ease-in;
+}
+
+.project-modal-subsection {
+    cursor: none;
+    text-decoration: none;
+    padding: 1em;
+}
+
+.project-modal-title {
+    font-family: "Intel One Mono";
+    font-size: 1em;
+}
+
 /* ============== Contact Section ============== */
 #contact-section {
     display: flex;
@@ -501,6 +528,8 @@ main::-webkit-scrollbar {
     font-family: "Intel One Mono";
     font-size: .9em;
     font-weight: 300;
+
+    text-align: center;
 }
 
 /* ============== CURSOR =============== */

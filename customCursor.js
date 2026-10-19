@@ -10,10 +10,19 @@
 
 const cursor = document.querySelector('#custom-cursor')
 const main = document.querySelector('main')
+const mainSubsection = document.querySelector('.main-subsection')
 const backgroundImage = document.querySelector('#background-image')
 
+const contactSection = document.querySelector('#contact-section')
 const contactButton = document.querySelector('#header-contact')
 const headerIcon = document.querySelector('#header-icon')
+
+const projectRow = document.querySelector('#project-row')
+const projectDewey = document.querySelector('#project-dewey')
+const projectFrigo = document.querySelector('#project-frigo')
+const projectSite = document.querySelector('#project-site')
+const projectModal = document.querySelector('#project-modal')
+const projectSubsection = document.querySelectorAll('.project-modal-subsection')
 
 const hoverList = document.querySelectorAll('.clickable')
 
@@ -62,7 +71,7 @@ main.addEventListener('scroll', ()=> {
         document.documentElement.style.setProperty("--background-color2", `rgb(${r2},${g2},${b2})`);
     }
 
-    // Actualisation du fond qui tournesin(
+    // Actualisation du fond qui tourne
     document.documentElement.style.setProperty("--background-x-percentage", (Math.cos(main.scrollTop/main.clientHeight/2*Math.PI) * 50 + 50) + "%");
     document.documentElement.style.setProperty("--background-y-percentage", (Math.sin(main.scrollTop/main.clientHeight/2*Math.PI) * 75 + 75) + "%");
 })
@@ -75,9 +84,39 @@ hoverList.forEach(el => {
         cursor.classList.remove('pointer');
     });
 });
+
 headerIcon.addEventListener('click', ()=>{
     headerIcon.classList.add('hidden')
     cursor.classList.add('scroll')
     cursor.innerHTML = "Scroll"
     main.scrollTo({top: 0, behavior: 'smooth'})
+})
+
+contactButton.addEventListener('click', ()=>{
+    headerIcon.classList.remove('hidden')
+    cursor.classList.remove('scroll')
+    cursor.innerHTML = ""
+    main.scrollTo({top: contactSection.getBoundingClientRect().top + contactSection.clientHeight/2, behavior: 'smooth'})
+})
+
+projectRow.addEventListener('click', ()=>{
+    projectSubsection[0].href = 'https://octerry.github.io/RankedOnlineWankul'
+    projectSubsection[1].href = 'https://github.com/octerry/RankedOnlineWankul'
+    projectModal.classList.remove('hidden')
+})
+
+projectFrigo.addEventListener('click', ()=>{
+    projectSubsection[0].href = 'https://octerry.github.io/MonFrigo/'
+    projectSubsection[1].href = 'https://github.com/octerry/MonFrigo'
+    projectModal.classList.remove('hidden')
+})
+
+projectSite.addEventListener('click', ()=>{
+    main.scrollTo({top: mainSubsection.clientHeight * 3, behavior: 'smooth'})
+})
+
+window.addEventListener('click', (e)=>{
+    if (!projectModal.contains(e.target) && !projectRow.contains(e.target) && !projectFrigo.contains(e.target)) {
+        projectModal.classList.add('hidden')
+    }
 })
