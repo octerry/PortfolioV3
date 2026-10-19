@@ -10,6 +10,7 @@
 
 const cursor = document.querySelector('#custom-cursor')
 const main = document.querySelector('main')
+const backgroundImage = document.querySelector('#background-image')
 
 const contactButton = document.querySelector('#header-contact')
 const headerIcon = document.querySelector('#header-icon')
@@ -31,6 +32,7 @@ document.addEventListener("mouseenter", ()=> {
 })
 
 main.addEventListener('scroll', ()=> {
+    // Changements à la sortie/entrée du homescreen
     if (main.scrollTop/main.clientHeight >= .5) {
         headerIcon.classList.remove('hidden')
         cursor.classList.remove('scroll')
@@ -42,6 +44,25 @@ main.addEventListener('scroll', ()=> {
         document.body.classList.remove('phase2')
     }
 
+    // Dégradé à l'entrée de la subsection
+    if (3.5 <= (main.scrollTop/main.clientHeight) && (main.scrollTop/main.clientHeight) <= 4) {
+        const unit = (main.scrollTop/main.clientHeight - 3.5) * 2
+        const startColors = [[24,20,29],[42,38,58]]
+        const endColors = [[22,29,20],[38,58,38]]
+
+        const r1 = (endColors[0][0] - startColors[0][0]) * unit + startColors[0][0]
+        const g1 = (endColors[0][1] - startColors[0][1]) * unit + startColors[0][1]
+        const b1 = (endColors[0][2] - startColors[0][2]) * unit + startColors[0][2]
+
+        const r2 = (endColors[1][0] - startColors[1][0]) * unit + startColors[1][0]
+        const g2 = (endColors[1][1] - startColors[1][1]) * unit + startColors[1][1]
+        const b2 = (endColors[1][2] - startColors[1][2]) * unit + startColors[1][2]
+
+        document.documentElement.style.setProperty("--background-color1", `rgb(${r1},${g1},${b1})`);
+        document.documentElement.style.setProperty("--background-color2", `rgb(${r2},${g2},${b2})`);
+    }
+
+    // Actualisation du fond qui tournesin(
     document.documentElement.style.setProperty("--background-x-percentage", (Math.cos(main.scrollTop/main.clientHeight/2*Math.PI) * 50 + 50) + "%");
     document.documentElement.style.setProperty("--background-y-percentage", (Math.sin(main.scrollTop/main.clientHeight/2*Math.PI) * 75 + 75) + "%");
 })
