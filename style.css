@@ -681,6 +681,8 @@ main::-webkit-scrollbar {
 
     padding: 1em 2em;
     padding-bottom: 2em;
+
+    width: fit-content;
 }
 
 .footer-text {
@@ -734,4 +736,54 @@ main::-webkit-scrollbar {
     backdrop-filter: transparent;
     font-size: 1px;
     color: #ffffff00;
+}
+
+/* =============== 404 ================== */
+#main-404 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: radial-gradient(circle at var(--background-x-percentage) var(--background-y-percentage), var(--background-color1) 0%, var(--background-color2) 100%);
+}
+
+#center-404 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+#icon-404 {
+    width: 350px;
+    max-width: 90vw;
+    margin-bottom: 20px;
+}
+
+#subtitle-part-404 {
+    width: fit-content;
+    padding: 1em;
+
+    text-align: center;
+    border: 1px #ffffff80 solid;
+    border-radius: .5em;
+}
+
+#subtitle-404 {
+    font-size: 1em;
+    font-family: "Intel One Mono";
+    color: #ffffffD0;
+}
+
+#return-404 {
+    cursor: none;
+    margin-top: 3em;
+    font-family: "Outfit";
+    font-size: 1.2em;
+}
+
+#footer-404 {
+    position: absolute;
+    bottom: 0;
 }
