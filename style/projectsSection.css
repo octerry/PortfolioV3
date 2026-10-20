@@ -1,0 +1,106 @@
+/* Coucou toi qui regarde dans le code
+
+
+/‾‾‾‾‾\ /‾‾‾‾‾] [‾‾‾‾‾‾‾‾] |‾‾‾‾‾] |‾‾‾‾‾\ |‾‾‾‾‾\ \‾‾\  /‾‾/
+| |‾| | | |‾‾‾   ‾‾|  |‾‾  | |‾‾‾  |     | |     |  \  \/  /
+| | | | | |        |  |    |  ___] |     / |     /   \    /
+| |_| | | |___     |  |    | |___  | |\ \  | |\ \     |  |
+\_____/ \_____]    |__|    |_____] |_| \_\ |_| \_\    |__|
+MADE ON EARTH BY HUMANS */
+
+/* ============== Projet Section =============== */
+#project-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#project-section-title {
+    font-family: "Momo Trust Display";
+    margin-bottom: .7em;
+}
+
+#project-content {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 30vw 30vw;
+    grid-row: auto auto;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+
+    width: 45em;
+    max-width: 90%;
+
+    gap: 1em;
+}
+
+.project-unit {
+    border: 1px #ffffff80 solid;
+    border-radius: .5em;
+    padding: .5em;
+
+    transition: .3s box-shadow ease-out, .3s background-color ease-out, .3s transform ease-out;
+}
+
+.project-unit.clickable:hover {
+    background-color: #3f255640;
+    box-shadow: 0 0 15px #3f255690;
+    transform: rotate(-1deg) translateY(-3px);
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.project-number {
+    font-family: 'Intel One Mono';
+    font-weight: 100;
+    font-size: 1vw;
+}
+
+.project-title {
+    font-family: 'Nanum Gothic Coding';
+    font-size: 1.5vw;
+}
+
+.project-icon {
+    width: 1vw;
+}
+
+.project-description {
+    margin: 1em;
+    font-family: "Momo Trust Sans";
+    font-weight: 100;
+    font-size: 1.2vw;
+}
+
+#project-modal {
+    position: relative;
+    display: flex;
+    z-index: 0;
+    bottom: 15em;
+
+    text-decoration: none;
+
+    background: radial-gradient(#ffffff20 0%, #ffffff50 100%);
+    backdrop-filter: blur(2px);
+    border: 1px #fff solid;
+    border-radius: 1em;
+
+    transition: .2s opacity ease-in;
+}
+
+.project-modal-subsection {
+    cursor: none;
+    text-decoration: none;
+    padding: 1em;
+}
+
+.project-modal-title {
+    font-family: "Intel One Mono";
+    font-size: 1em;
+}
+

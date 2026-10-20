@@ -1,0 +1,36 @@
+/* Coucou toi qui regarde dans le code
+
+
+/‾‾‾‾‾\ /‾‾‾‾‾] [‾‾‾‾‾‾‾‾] |‾‾‾‾‾] |‾‾‾‾‾\ |‾‾‾‾‾\ \‾‾\  /‾‾/
+| |‾| | | |‾‾‾   ‾‾|  |‾‾  | |‾‾‾  |     | |     |  \  \/  /
+| | | | | |        |  |    |  ___] |     / |     /   \    /
+| |_| | | |___     |  |    | |___  | |\ \  | |\ \     |  |
+\_____/ \_____]    |__|    |_____] |_| \_\ |_| \_\    |__|
+MADE ON EARTH BY HUMANS */
+
+/* ============== FOOTER =============== */
+#footer-message {
+    color: #ffffff80;
+    font-family: "Outfit";
+    text-align: center;
+    font-size: .7em;
+}
+
+#footer-box {
+    border: 1px #ffffff80 solid;
+    border-bottom: transparent;
+    border-radius: .5em .5em 0 0 ;
+
+    padding: 1em 2em;
+    padding-bottom: 2em;
+
+    width: fit-content;
+}
+
+.footer-text {
+    font-family: "Intel One Mono";
+    font-size: .9em;
+    font-weight: 300;
+
+    text-align: center;
+}

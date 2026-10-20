@@ -1,0 +1,266 @@
+/* Coucou toi qui regarde dans le code
+
+
+/‾‾‾‾‾\ /‾‾‾‾‾] [‾‾‾‾‾‾‾‾] |‾‾‾‾‾] |‾‾‾‾‾\ |‾‾‾‾‾\ \‾‾\  /‾‾/
+| |‾| | | |‾‾‾   ‾‾|  |‾‾  | |‾‾‾  |     | |     |  \  \/  /
+| | | | | |        |  |    |  ___] |     / |     /   \    /
+| |_| | | |___     |  |    | |___  | |\ \  | |\ \     |  |
+\_____/ \_____]    |__|    |_____] |_| \_\ |_| \_\    |__|
+MADE ON EARTH BY HUMANS */
+
+/* ============== Main Subsection =============== */
+.main-subsection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    min-height: 100vh;
+    scroll-snap-align: start;
+}
+
+#main-subsection-title {
+    font-family: "Momo Trust Display";
+    text-align: center;
+
+    padding-top: 2em;
+}
+
+#detail-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#detail-title {
+    font-family: "Momo Trust Display";
+    line-height: 100%;
+    font-size: 1.5em;
+
+    margin-top: 3em;
+}
+
+#detail-subtitle {
+    font-family: "Intel One Mono";
+    font-weight: 100;
+    font-size: 1em;
+}
+
+#detail-button {
+    padding: .5em;
+
+    font-family: "Outfit";
+    font-size: 1em;
+
+    margin-top: 1em;
+    border: 1px #fff solid;
+    border-radius: .5em;
+    background-color: #00000040;
+
+    transition: .2s transform ease-out, .2s box-shadow ease-out, .1s background-color;
+}
+
+#detail-button:hover {
+    transform: scale(1.05);
+    box-shadow: 4px 4px 8px #00000050;
+    background-color: #ffffff40;
+    border: 1px #ffffff00 solid;
+}
+
+#detail-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border-radius: .5em;
+    max-height: 90vh;
+    max-width: 90vw;
+    width: clamp(fit-content, min-content, max-content);
+    overflow-y: scroll;
+    scrollbar-color: rgb(183, 151, 214) transparent;
+    scrollbar-width: thin;
+
+    background: linear-gradient(.125turn, #11042C50 0%, #5B32B380 100%);
+    backdrop-filter: blur(10px);
+    box-shadow: 4px 4px 8px #00000050;
+
+    transition: .3s opacity ease-out;
+}
+
+.detail-modal-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1em;
+}
+
+.detail-modal-image {
+    height: 10em;
+    margin-right: 1em;
+    object-fit: cover;
+}
+
+.detail-modal-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    max-width: 60%;
+}
+
+.detail-modal-title {
+    margin-bottom: .5em;
+
+    font-size: 1.8em;
+    font-family: "Cormorant Unicase";
+}
+
+.detail-modal-description {
+    font-family: "Outfit";
+    font-size: 1.1em;
+}
+
+#subsection-file-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    margin: 7em 0;
+}
+
+.file-part {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 9em;
+    margin: 1em 2em;
+}
+
+.file-title {
+    font-family: "Intel One Mono";
+    font-weight: 100;
+    font-size: .7em;
+    line-height: 100%;
+}
+
+.file-icon {
+    width: 7em;
+}
+
+.file-back {
+    transform: perspective(75em) rotateY(30deg);
+}
+
+.file-animation-part {
+    transition: .2s transform ease-in-out;
+    transform: perspective(75em) rotateY(30deg) translateZ(1em) rotateX(-5deg);
+}
+
+.file-icon:hover .file-animation-part {
+    transform: perspective(75em) rotateY(30deg) translateZ(5em) translateY(1.4em) rotateX(-30deg);
+}
+
+#file-modal {
+    display: flex;
+    flex-direction: column-reverse;
+
+    position: absolute;
+    bottom: 0;
+    height: 100vh;
+    width: 100vw;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    transition: .3s transform ease-in;
+}
+
+#file-modal::-webkit-scrollbar {
+    display: none;
+}
+
+#file-modal.downed {
+    transform: translateY(110vh);
+}
+
+#file-modal-scrollable {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-family: "Intel One Mono";
+
+    background-color: #D9D9D920;
+    backdrop-filter: blur(5px);
+    border-radius: 1em 1em 0 0;
+    width: 100vw;
+    padding-bottom: 3em;
+    margin-top: 15vh;
+}
+
+#file-modal-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1em;
+}
+
+#file-modal-title {
+    font-weight: 200;
+    font-size: 1em;
+}
+
+#file-down-arrow {
+    margin-right: 1em;
+    width: 1.5em;
+
+    transition: .3s transform ease-out;
+}
+
+#file-down-arrow:hover {
+    transform: translateY(5px);
+}
+
+#file-modal-content {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.file-modal-part {
+    width: 300px;
+    height: 180px;
+    padding: .4em .5em;
+
+    border: 1px #ffffff80 solid;
+    border-radius: .3em;
+}
+
+.file-part-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.file-part-date {
+    font-size: .7em;
+    font-weight: 300;
+    color: #ffffff80
+}
+
+.file-part-title {
+    font-size: .7em;
+    font-weight: 400;
+}
+
+.file-part-icon {
+    width: 1.5em;
+}
+
+.file-part-description {
+    font-size: .6em;
+    margin: .5em 1em;
+}

@@ -1,0 +1,69 @@
+/* Coucou toi qui regarde dans le code
+
+
+/‾‾‾‾‾\ /‾‾‾‾‾] [‾‾‾‾‾‾‾‾] |‾‾‾‾‾] |‾‾‾‾‾\ |‾‾‾‾‾\ \‾‾\  /‾‾/
+| |‾| | | |‾‾‾   ‾‾|  |‾‾  | |‾‾‾  |     | |     |  \  \/  /
+| | | | | |        |  |    |  ___] |     / |     /   \    /
+| |_| | | |___     |  |    | |___  | |\ \  | |\ \     |  |
+\_____/ \_____]    |__|    |_____] |_| \_\ |_| \_\    |__|
+MADE ON EARTH BY HUMANS */
+
+/* ============== Contact Section ============== */
+#contact-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#contact-title {
+    font-family: "Momo Trust Display";
+    font-size: 3em;
+    line-height: 100%;
+}
+
+#contact-subtitle {
+    font-family: "Outfit";
+    font-size: 1em;
+    font-weight: 200;
+
+    margin-bottom: 1.5em;
+}
+
+#contact-icons-section {
+    display: flex;
+    gap: 1em;
+}
+
+#contact-icons-section a {
+    cursor: none;
+}
+
+.contact-icon {
+    width: 4em;
+    transition: .2s transform ease-out, .2s filter ease-out;
+}
+
+.contact-icon:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 10px #9672b380);
+}
+
+#see-more {
+    position: relative;
+    top: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#see-more-title {
+    font-family: "Intel One Mono";
+    font-weight: 100;
+    font-size: 1em;
+}
+
+#see-more-icon {
+    width: 3em;
+}

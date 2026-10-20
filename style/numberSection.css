@@ -1,0 +1,103 @@
+/* Coucou toi qui regarde dans le code
+
+
+/‾‾‾‾‾\ /‾‾‾‾‾] [‾‾‾‾‾‾‾‾] |‾‾‾‾‾] |‾‾‾‾‾\ |‾‾‾‾‾\ \‾‾\  /‾‾/
+| |‾| | | |‾‾‾   ‾‾|  |‾‾  | |‾‾‾  |     | |     |  \  \/  /
+| | | | | |        |  |    |  ___] |     / |     /   \    /
+| |_| | | |___     |  |    | |___  | |\ \  | |\ \     |  |
+\_____/ \_____]    |__|    |_____] |_| \_\ |_| \_\    |__|
+MADE ON EARTH BY HUMANS */
+
+/* ============= Numbers Section ============= */
+#clock-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#time-count {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#day-count {
+    font-size: 1.8em;
+}
+
+#hour-count {
+    margin-bottom: 1em;
+    font-size: 1em;
+}
+
+.clock-text {
+    font-family: "Mooli";
+    font-weight: 100;
+}
+
+#clock-section-numbers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: start;
+
+    margin-top: 2em;
+}
+
+.clock-number-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2em;
+}
+
+.clock-number-number {
+    font-family: "Momo Trust Display";
+    font-size: 7em;
+    line-height: 100%;
+}
+
+.clock-number-title {
+    font-family: "Outfit";
+    font-size: 1.7em;
+    font-weight: 400;
+    line-height: 100%;
+}
+
+.clock-number-subsection {
+    width: 14em;
+
+    margin-top: 2em;
+    padding: .7em;
+
+    border: 1px #ffffff80 solid;
+    border-radius: 1em;
+}
+
+.clock-number-description {
+    font-family: "Outfit";
+}
+
+@media (max-width: 780px) {
+    .clock-number-info {
+        margin: .7em;
+    }
+
+    .clock-number-number {
+        font-size: 5em;
+    }
+
+    .clock-number-title {
+        font-size: 1em;
+    }
+
+    .clock-number-subsection {
+        margin-top: 1em;
+    }
+
+    .clock-number-description {
+        font-size: .7em;
+    }
+}

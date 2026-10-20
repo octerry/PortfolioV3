@@ -1,0 +1,57 @@
+/* Coucou toi qui regarde dans le code
+
+
+/‾‾‾‾‾\ /‾‾‾‾‾] [‾‾‾‾‾‾‾‾] |‾‾‾‾‾] |‾‾‾‾‾\ |‾‾‾‾‾\ \‾‾\  /‾‾/
+| |‾| | | |‾‾‾   ‾‾|  |‾‾  | |‾‾‾  |     | |     |  \  \/  /
+| | | | | |        |  |    |  ___] |     / |     /   \    /
+| |_| | | |___     |  |    | |___  | |\ \  | |\ \     |  |
+\_____/ \_____]    |__|    |_____] |_| \_\ |_| \_\    |__|
+MADE ON EARTH BY HUMANS */
+
+/* =============== HOMESCREEN ================ */
+#homescreen-section {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+
+    justify-content: center;
+    align-items: center;
+}
+
+#homescreen-centered-section {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+
+    max-width: 90%;
+}
+
+#homescreen-icon {
+    width: 8em;
+    margin-right: 1.5em;
+}
+
+#homescreen-infos {
+    margin-bottom: 1em;
+}
+
+#homescreen-title {
+    font-family: "Momo Trust Display";
+    font-size: 3em;
+
+    margin-bottom: .2em;
+}
+
+#homescreen-description-section {
+    padding: .7em;
+    width: 23em;
+
+    border: 1px #ffffff60 solid;
+    border-radius: .25em;
+}
+
+#homescreen-description {
+    font-family: "IBM Plex Mono";
+    font-size: 1em;
+    color: #ffffff80;
+}

@@ -1,0 +1,35 @@
+/* Coucou toi qui regarde dans le code
+
+
+/‾‾‾‾‾\ /‾‾‾‾‾] [‾‾‾‾‾‾‾‾] |‾‾‾‾‾] |‾‾‾‾‾\ |‾‾‾‾‾\ \‾‾\  /‾‾/
+| |‾| | | |‾‾‾   ‾‾|  |‾‾  | |‾‾‾  |     | |     |  \  \/  /
+| | | | | |        |  |    |  ___] |     / |     /   \    /
+| |_| | | |___     |  |    | |___  | |\ \  | |\ \     |  |
+\_____/ \_____]    |__|    |_____] |_| \_\ |_| \_\    |__|
+MADE ON EARTH BY HUMANS */
+
+/* =============== MAIN ================ */
+main {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+
+main::-webkit-scrollbar {
+    display: none;
+}
+
+#background-image {
+    position: fixed;
+
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+
+    background: radial-gradient(circle at var(--background-x-percentage) var(--background-y-percentage), var(--background-color1) 0%, var(--background-color2) 100%);
+}
+
+.main-section {
+    height: 100vh;
+    scroll-snap-align: center;
+}
