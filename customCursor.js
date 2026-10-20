@@ -24,12 +24,31 @@ const projectSite = document.querySelector('#project-site')
 const projectModal = document.querySelector('#project-modal')
 const projectSubsection = document.querySelectorAll('.project-modal-subsection')
 
+const detailButton = document.querySelector('#detail-button')
+const detailModal = document.querySelector('#detail-modal')
+
+const blueFile = document.querySelector('#blue-file')
+const orangeFile = document.querySelector('#orange-file')
+const redFile = document.querySelector('#red-file')
+const bigFileModal = document.querySelector('#file-modal')
+const fileModal = document.querySelector('#file-modal-scrollable')
+const filePart = document.querySelectorAll('.detail-modal-section')
+const fileDownArrow = document.querySelector('#file-down-arrow')
+
+const fileModalTitle = document.querySelector('#file-modal-title')
+const blueFileContent = document.querySelectorAll('.blue-file-content')
+const orangeFileContent = document.querySelectorAll('.orange-file-content')
+const redFileContent = document.querySelectorAll('.red-file-content')
+
 const hoverList = document.querySelectorAll('.clickable')
+const isMobile = checkMobile()
 
 window.addEventListener("mousemove", (e)=> {
-    document.body.style.cursor = 'none'
-    cursor.style.top = e.clientY + "px"
-    cursor.style.left = e.clientX + "px"
+    if (!isMobile) {
+        document.body.style.cursor = 'none'
+        cursor.style.top = e.clientY + "px"
+        cursor.style.left = e.clientX + "px"
+    }
 })
 
 document.addEventListener("mouseleave", ()=> {
@@ -69,6 +88,14 @@ main.addEventListener('scroll', ()=> {
 
         document.documentElement.style.setProperty("--background-color1", `rgb(${r1},${g1},${b1})`);
         document.documentElement.style.setProperty("--background-color2", `rgb(${r2},${g2},${b2})`);
+    } else {
+        if (main.scrollTop/main.clientHeight > 4) {
+            document.documentElement.style.setProperty("--background-color1", `rgb(22,29,20)`)
+            document.documentElement.style.setProperty("--background-color2", `rgb(38,58,38)`)
+        } else {
+            document.documentElement.style.setProperty("--background-color1", `#110e15`)
+            document.documentElement.style.setProperty("--background-color2", `#2A263A`)
+        }
     }
 
     // Actualisation du fond qui tourne
@@ -96,7 +123,7 @@ contactButton.addEventListener('click', ()=>{
     headerIcon.classList.remove('hidden')
     cursor.classList.remove('scroll')
     cursor.innerHTML = ""
-    main.scrollTo({top: contactSection.getBoundingClientRect().top + contactSection.clientHeight/2, behavior: 'smooth'})
+    main.scrollTo({top: mainSubsection.clientHeight * 2, behavior: 'smooth'})
 })
 
 projectRow.addEventListener('click', ()=>{
@@ -115,8 +142,111 @@ projectSite.addEventListener('click', ()=>{
     main.scrollTo({top: mainSubsection.clientHeight * 3, behavior: 'smooth'})
 })
 
+detailButton.addEventListener('click', ()=>{
+    main.style.overflowY = "hidden";
+    detailModal.classList.remove('hidden')
+})
+
+blueFile.addEventListener('click', ()=>{
+    bigFileModal.scrollTo({top: -1000})
+    bigFileModal.classList.remove('downed')
+
+    fileModalTitle.innerHTML = "Experiences professionelles"
+
+    blueFileContent.forEach(blue => {
+        blue.style.display = "block";
+    });
+
+    orangeFileContent.forEach(orange => {
+        orange.style.display = "none";
+    });
+
+    redFileContent.forEach(red => {
+        red.style.display = "none";
+    });
+})
+
+orangeFile.addEventListener('click', ()=>{
+    bigFileModal.scrollTo({top: -1000})
+    bigFileModal.classList.remove('downed')
+
+    fileModalTitle.innerHTML = "Quelques autres projets"
+
+    orangeFileContent.forEach(orange => {
+        orange.style.display = "block";
+    });
+
+    blueFileContent.forEach(blue => {
+        blue.style.display = "none";
+    });
+
+    redFileContent.forEach(red => {
+        red.style.display = "none";
+    });
+})
+
+redFile.addEventListener('click', ()=>{
+    bigFileModal.scrollTo({top: -1000})
+    bigFileModal.classList.remove('downed')
+
+    fileModalTitle.innerHTML = "Mes experimentations"
+
+    redFileContent.forEach(red => {
+        red.style.display = "block";
+    });
+
+    blueFileContent.forEach(blue => {
+        blue.style.display = "none";
+    });
+
+    orangeFileContent.forEach(orange => {
+        orange.style.display = "none";
+    });
+})
+
+fileDownArrow.addEventListener('click', ()=>{
+    bigFileModal.classList.add('downed')
+})
+
 window.addEventListener('click', (e)=>{
     if (!projectModal.contains(e.target) && !projectRow.contains(e.target) && !projectFrigo.contains(e.target)) {
         projectModal.classList.add('hidden')
+    }
+
+    if (!detailModal.contains(e.target) && !detailButton.contains(e.target)) {
+        detailModal.classList.add('hidden')
+        main.style.overflowY = "scroll";
+    }
+})
+
+bigFileModal.addEventListener('click', (e)=>{
+    if (!fileModal.contains(e.target)) {
+        bigFileModal.classList.add('downed')
+    }
+})
+
+// Source - https://stackoverflow.com/a/11381730
+function checkMobile() {
+    const toMatch = [
+        /Android/i,
+        /webOS/i,
+        /iPhone/i,
+        /iPad/i,
+        /iPod/i,
+        /BlackBerry/i,
+        /Windows Phone/i
+    ];
+
+    return toMatch.some((toMatchItem) => {
+        return navigator.userAgent.match(toMatchItem);
+    });
+}
+
+window.addEventListener('keydown', (e)=>{
+    if (e.code == "ArrowUp") {
+        main.scrollTo({top: main.scrollTop - mainSubsection.clientHeight, behavior: 'smooth'})
+    }
+    if (e.code == "ArrowDown") {
+        main.scrollTo({top: main.scrollTop + mainSubsection.clientHeight, behavior: 'smooth'})
     }
 })
