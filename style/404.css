@@ -23,6 +23,12 @@ MADE ON EARTH BY HUMANS */
     justify-content: center;
     align-items: center;
     margin-bottom: 100px;
+
+    transition: .5s transform ease-out, .5s filter ease-out;
+
+    @starting-style {
+        transform: scaleY(0) scaleY(3) scaleX(1.5);
+    }
 }
 
 #icon-404 {
@@ -56,4 +62,10 @@ MADE ON EARTH BY HUMANS */
 #footer-404 {
     position: absolute;
     bottom: 0;
+
+    transition: .5s .3s transform ease-out;
+
+    @starting-style {
+        transform: translateY(150%);
+    }
 }

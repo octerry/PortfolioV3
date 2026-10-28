@@ -24,6 +24,13 @@ MADE ON EARTH BY HUMANS */
     justify-content: center;
 
     max-width: 90%;
+
+    transition: 1s filter ease-out, 1s transform cubic-bezier(0.075, 0.82, 0.165, 1);
+
+    @starting-style {
+        filter: blur(5px);
+        transform: translateY(-50%) scale(3);
+    }
 }
 
 #homescreen-icon {

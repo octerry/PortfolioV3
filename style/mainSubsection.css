@@ -16,6 +16,15 @@ MADE ON EARTH BY HUMANS */
 
     min-height: 100vh;
     scroll-snap-align: start;
+
+    opacity: .2;
+    filter: blur(5px);
+}
+
+.main-subsection.appear {
+    transition: .5s opacity ease-out, .5s filter ease-out;
+    filter: none;
+    opacity: 1;
 }
 
 #main-subsection-title {

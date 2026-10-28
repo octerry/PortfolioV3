@@ -20,6 +20,15 @@ MADE ON EARTH BY HUMANS */
 #project-section-title {
     font-family: "Momo Trust Display";
     margin-bottom: .7em;
+
+    filter: blur(5px);
+    opacity: .2;
+}
+
+#project-section.appear #project-section-title {
+    transition: .5s filter ease-out, .5s opacity ease-out;
+    filter: none;
+    opacity: 1;
 }
 
 #project-content {
@@ -41,10 +50,31 @@ MADE ON EARTH BY HUMANS */
     border-radius: .5em;
     padding: .5em;
 
-    transition: .3s box-shadow ease-out, .3s background-color ease-out, .3s transform ease-out;
+    opacity: .2;
+    filter: blur(5px);
+}
+
+#project-section.appear .project-unit {
+    opacity: 1;
+    filter: blur(0);
+    --delay: 0s;
+    transition: transform 1s ease-out var(--delay),
+        filter .4s ease-out var(--delay),
+        opacity 1s ease-out var(--delay);
+}
+
+#project-section.appear .project-unit:nth-child(2),
+#project-section.appear .project-unit:nth-child(3) {
+    --delay: .2s;
+}
+
+#project-section.appear .project-unit:nth-child(4) {
+    --delay: .4s;
 }
 
 .project-unit.clickable:hover {
+    transition: .3s box-shadow ease-out, .3s background-color ease-out, .3s transform ease-out !important;
+
     background-color: #3f255640;
     box-shadow: 0 0 15px #3f255690;
     transform: rotate(-1deg) translateY(-3px);
@@ -103,4 +133,3 @@ MADE ON EARTH BY HUMANS */
     font-family: "Intel One Mono";
     font-size: 1em;
 }
-

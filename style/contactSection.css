@@ -20,6 +20,16 @@ MADE ON EARTH BY HUMANS */
     font-family: "Momo Trust Display";
     font-size: 3em;
     line-height: 100%;
+
+    transform: translateY(50%);
+    filter: blur(5px);
+}
+
+#contact-section.appear #contact-title {
+    transition: .5s transform ease-out, .5s filter ease-out, .5s opacity ease-out;
+    opacity: 1;
+    transform: none;
+    filter: none;
 }
 
 #contact-subtitle {
@@ -28,11 +38,32 @@ MADE ON EARTH BY HUMANS */
     font-weight: 200;
 
     margin-bottom: 1.5em;
+
+    transform: translateY(50%);
+    filter: blur(5px);  
+}
+
+#contact-section.appear #contact-subtitle {
+    transition: .5s transform ease-out, .5s filter ease-out, .5s opacity ease-out;
+    opacity: 1;
+    transform: none;
+    filter: none;
 }
 
 #contact-icons-section {
     display: flex;
     gap: 1em;
+
+    transform: translateY(-100%);
+    filter: blur(5px);  
+    opacity: 0;
+}
+
+#contact-section.appear #contact-icons-section {
+    transition: .5s transform ease-out, .5s filter ease-out, .5s opacity ease-out;
+    opacity: 1;
+    transform: none;
+    filter: none;
 }
 
 #contact-icons-section a {

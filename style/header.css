@@ -49,10 +49,16 @@ header {
     border-radius: .7em;
     border-bottom-right-radius: 0;
 
-    transition: .2s transform ease-out, .2s box-shadow ease-out;
+    transition: .6s .8s transform cubic-bezier(0.165, 0.84, 0.44, 1);
+
+    @starting-style {
+        transform: translateX(150%) scaleY(.5);
+    }
 }
 
 #header-contact:hover {
+    transition: .2s transform ease-out, .2s box-shadow ease-out;
+
     transform: scale(1.05);
     box-shadow: #d9b0ff90 0 0 10px, inset #d9b0ff90 0 0 10px;
     border: 1px #ffffffD0 solid;

@@ -98,6 +98,9 @@ main.addEventListener('scroll', ()=> {
         }
     }
 
+    // Animation d'apparition
+    main.children[Math.floor(main.scrollTop/main.clientHeight+.3) + 1].classList.add('appear')
+
     // Actualisation du fond qui tourne
     document.documentElement.style.setProperty("--background-x-percentage", (Math.cos(main.scrollTop/main.clientHeight/2*Math.PI) * 50 + 50) + "%");
     document.documentElement.style.setProperty("--background-y-percentage", (Math.sin(main.scrollTop/main.clientHeight/2*Math.PI) * 75 + 75) + "%");
