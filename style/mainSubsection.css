@@ -41,7 +41,7 @@ MADE ON EARTH BY HUMANS */
     align-items: center;
 }
 
-#detail-title {
+.subsection-section-title {
     font-family: "Momo Trust Display";
     line-height: 100%;
     font-size: 1.5em;
@@ -55,7 +55,7 @@ MADE ON EARTH BY HUMANS */
     font-size: 1em;
 }
 
-#detail-button {
+.subsection-button {
     padding: .5em;
 
     font-family: "Outfit";
@@ -69,7 +69,7 @@ MADE ON EARTH BY HUMANS */
     transition: .2s transform ease-out, .2s box-shadow ease-out, .1s background-color;
 }
 
-#detail-button:hover {
+.subsection-button:hover {
     transform: scale(1.05);
     box-shadow: 4px 4px 8px #00000050;
     background-color: #ffffff40;
@@ -127,6 +127,94 @@ MADE ON EARTH BY HUMANS */
 .detail-modal-description {
     font-family: "Outfit";
     font-size: 1.1em;
+}
+
+#skills-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#skills-subsection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    width: 90vh;
+    max-width: 90vw;
+
+    font-family: "Chathura";
+
+    gap: 3vh;
+    margin-top: 3vh;
+}
+
+.skills-icon-section {
+    height: 15vh;
+}
+
+.skills-icon-section:hover .skills-icon {
+    transform: scale(.9);
+    opacity: 1;
+}
+
+.skills-icon-section:hover .skills-icon-modal {
+    transform: none;
+    opacity: 1;
+}
+
+.skills-icon {
+    height: 15vh;
+    opacity: .3;
+
+    transition: .3s transform ease-out, .3s opacity ease-in-out;
+}
+
+.skills-icon-modal {
+    position: relative;
+    top: -30px;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    transform: translateY(10px);
+    opacity: 0;
+
+    transition: .3s transform ease-out, .3s opacity ease-out;
+}
+
+.skills-triangle {
+    margin-bottom: -5px;
+}
+
+.skills-icon-modal-cube {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #262626;
+    padding: 5px 8px;
+    width: fit-content;
+    border-radius: 5px;
+}
+
+.skills-icon-modal h1 {
+    font-size: 30px;
+    line-height: 80%;
+}
+
+.skills-icon-modal h2 {
+    font-size: 20px;
+    line-height: 80%;
+}
+
+#cv-button {
+    display: flex;
+    padding: 5px;
 }
 
 #subsection-file-section {
