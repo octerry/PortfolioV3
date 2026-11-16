@@ -43,16 +43,109 @@ html, body {
     border-radius: 5px;
     height: 60px;
     width: 100px;
+
+    transition: transform .2s ease-out, background-color .2s ease-in-out;
+}
+
+.homepage-subsection:hover {
+    cursor: pointer;
+    transform: scale(.95);
+    background-color: #363636;
+}
+
+.homepage-subsection:hover img, .homepage-subsection:hover h2 {
+    filter: blur(1px);
 }
 
 .homepage-subsection img {
     margin-top: 10px;
     height: 30px;
     width: 30px;
+
+    transition: filter .2s ease-out;
 }
 
 .homepage-subsection h2 {
     font-family: "Inter";
     font-size: 10px;
     margin: 0;
+
+    transition: filter .2s ease-out;
+}
+
+.homepage-subsection:hover .subsection-modal {
+    opacity: 1;
+    pointer-events: all;
+    filter: none;
+    transform: translate(-50%, -50%) scale(.8);
+}
+
+.subsection-modal {
+    opacity: 0;
+    pointer-events: none;
+    filter: blur(2px);
+
+    position: relative;
+    left: 50%;
+    bottom: 40%;
+
+    transform: translate(-50%, -50%);
+
+    width: 40px;
+
+    padding: 2px;
+    border-radius: 4px;
+
+    transition: opacity .3s ease-in-out, filter .3s ease-in-out, transform .3s ease-in-out;
+}
+
+.subsection-modal-join {
+    border-radius: 3px;
+    padding: 2px;
+    background-color: #93939370;
+}
+
+.modal-join-title {
+    font-family: "Inter";
+    font-size: 6px;
+    font-weight: 300;
+
+    line-height: 100%;
+    margin: 0;
+}
+
+.modal-join-input {
+    font-family: "Inter";
+    font-size: 6px;
+    font-weight: 300;
+
+    width: 60%;
+
+    border: 1px #ffffff50 solid;
+    border-radius: 3px;
+
+    transition: border .2s ease-out;
+}
+
+.modal-join-input:hover {
+    border: 1px #ffffff90 solid;
+}
+
+.modal-create-button {
+    font-family: "Inter";
+    font-size: 6px;
+    font-weight: 300;
+
+    border: none;
+    border-radius: 3px;
+
+    background-color: #93939370;
+
+    transition: transform .2s ease-out, background-color .2s ease-out;
+}
+
+.modal-create-button:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    background-color: #939393;
 }
