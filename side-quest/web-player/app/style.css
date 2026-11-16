@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+    --unit: calc(1dvw + 1dvh);
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+#homepage-head-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: var(--unit);
+}
+
+#homepage-icon {
+    height: calc(var(--unit) * 3);
+}
+
+#homepage-title {
+    margin: 0;
+    margin-left: 1vw;
+    font-family: "Inter";
+    font-size: calc(var(--unit) * 3)
+}
+
+#homepage-main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    padding: 2px;
+}
+
+.homepage-subsection {
+    text-align: center;
+
+    background-color: #2B2B2B;
+    border-radius: 5px;
+    height: 60px;
+    width: 100px;
+}
+
+.homepage-subsection img {
+    margin-top: 10px;
+    height: 30px;
+    width: 30px;
+}
+
+.homepage-subsection h2 {
+    font-family: "Inter";
+    font-size: 10px;
+    margin: 0;
+}
