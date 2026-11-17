@@ -1,0 +1,12 @@
+#homepage-main {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 2px;
+}

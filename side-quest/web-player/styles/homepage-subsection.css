@@ -1,48 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
-:root {
-    --unit: calc(1dvw + 1dvh);
-}
-
-html, body {
-    margin: 0;
-    padding: 0;
-}
-
-#homepage-head-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: var(--unit);
-}
-
-#homepage-icon {
-    height: calc(var(--unit) * 3);
-}
-
-#homepage-title {
-    margin: 0;
-    margin-left: 1vw;
-    font-family: "Inter";
-    font-size: calc(var(--unit) * 3)
-}
-
-#homepage-main {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 3px;
-    padding: 2px;
-}
-
 .homepage-subsection {
     text-align: center;
 
-    background-color: #2B2B2B;
+    background-color: var(--secondary-bg);
     border-radius: 5px;
-    height: 60px;
-    width: 100px;
+    height: 200px;
+    width: 240px;
 
     transition: transform .2s ease-out, background-color .2s ease-in-out;
 }
@@ -58,17 +20,18 @@ html, body {
 }
 
 .homepage-subsection img {
-    margin-top: 10px;
-    height: 30px;
-    width: 30px;
+    margin-top: 30px;
+    height: 120px;
+    width: 120px;
 
     transition: filter .2s ease-out;
 }
 
 .homepage-subsection h2 {
     font-family: "Inter";
-    font-size: 10px;
+    font-size: 20px;
     margin: 0;
+    margin-top: 10px;
 
     transition: filter .2s ease-out;
 }
@@ -91,23 +54,23 @@ html, body {
 
     transform: translate(-50%, -50%);
 
-    width: 40px;
+    width: 150px;
 
-    padding: 2px;
-    border-radius: 4px;
+    padding: 10px;
+    border-radius: 8px;
 
     transition: opacity .3s ease-in-out, filter .3s ease-in-out, transform .3s ease-in-out;
 }
 
 .subsection-modal-join {
-    border-radius: 3px;
-    padding: 2px;
+    border-radius: 8px;
+    padding: 8px;
     background-color: #93939370;
 }
 
 .modal-join-title {
     font-family: "Inter";
-    font-size: 6px;
+    font-size: 26px;
     font-weight: 300;
 
     line-height: 100%;
@@ -116,10 +79,10 @@ html, body {
 
 .modal-join-input {
     font-family: "Inter";
-    font-size: 6px;
+    font-size: 18px;
     font-weight: 300;
 
-    width: 60%;
+    width: 40%;
 
     border: 1px #ffffff50 solid;
     border-radius: 3px;
@@ -133,11 +96,13 @@ html, body {
 
 .modal-create-button {
     font-family: "Inter";
-    font-size: 6px;
+    font-size: 24px;
     font-weight: 300;
+    color: var(--foreground);
 
     border: none;
-    border-radius: 3px;
+    border-radius: 8px;
+    margin-top: 10px;
 
     background-color: #93939370;
 

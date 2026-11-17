@@ -1,0 +1,20 @@
+#homepage-head-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: var(--unit);
+}
+
+#homepage-icon {
+    height: calc(var(--unit) * 3);
+    width: calc(var(--unit) * 3);
+
+    fill: var(--icon-color);
+}
+
+#homepage-title {
+    margin: 0;
+    margin-left: 1vw;
+    font-family: "Inter";
+    font-size: calc(var(--unit) * 3)
+}
