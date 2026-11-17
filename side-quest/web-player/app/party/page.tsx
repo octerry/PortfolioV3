@@ -1,12 +1,12 @@
 'use client'
 
-import { useSearchParams } from "next/navigation"
+import GameLayout from "@/components/game-layout";
+import { Suspense } from "react";
 
 export default function Party() {
-    const searchParams = useSearchParams()
-    const code = searchParams.get('code');
-
     return (
-        <h1>{code}</h1>
+        <Suspense fallback={<p>Loading...</p>}>
+            <GameLayout/>
+        </Suspense>
     )
 }
