@@ -1,0 +1,123 @@
+#username-modal {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    opacity: 0;
+    transform: translate(-100%, -100%) scale(.6);
+    filter: blur(2px);
+
+    width: 20rem;
+
+    background-color: #271D29;
+    border: #8E4CA0 1px solid;
+    border-radius: 1rem;
+
+    box-shadow: .5rem .5rem 1rem #00000040;
+
+    padding: 2rem;
+
+    transition: opacity .3s ease-in-out, transform .3s ease-in-out, filter .3s ease-in-out;
+}
+
+.showing-modal {
+    opacity: 1 !important;
+    transform: translate(-50%, -50%) scale(1) !important;
+    filter: none !important;
+}
+
+#username-modal * {
+    line-height: 100%;
+}
+
+.modal-title {
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.modal-subtitle {
+    font-size: 1rem;
+    margin-top: .5rem;
+    margin-bottom: .8rem;
+}
+
+.modal-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.modal-input {
+    width: calc(100% - 2.3rem);
+    height: 2rem;
+
+    font-family: "Inter";
+    font-size: 1rem;
+    color: #fff;
+
+    background-color: #D9D9D940;
+    border: 1px transparent solid;
+    border-radius: .5rem;
+
+    margin-right: .3rem;
+    padding-left: .5rem;
+}
+
+.modal-input::placeholder {
+    font-family: "Inter";
+    font-size: 1rem;
+    color: #ffffff60;
+}
+
+.modal-input:hover {
+    border: #ffffff60 1px solid;
+}
+
+.modal-input:focus {
+    outline: #8E4CA0 2px solid;
+}
+
+.modal-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+
+    background-color: #85FF4440;
+    border-radius: .5rem;
+    border: transparent;
+
+    transition: background-color .3s ease-out, transform .3s ease-out;
+}
+
+.modal-submit:hover {
+    cursor: pointer;
+    background-color: #85FF4450;
+    transform: scale(.9);
+}
+
+.modal-precisions {
+    font-size: .7rem;
+    color: #ffffff60;
+    text-align: center;
+
+    margin-top: 1rem;
+}
+
+.modal-nav {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.modal-recommandations {
+    font-size: .7rem;
+    text-decoration: underline;
+    margin: 0;
+}
+
+.modal-recommandations:hover {
+    cursor: pointer;
+}

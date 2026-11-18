@@ -33,7 +33,7 @@ export default function ChatTest() {
     
     function handleSend(formData:FormData) {
         const text = formData?.get('content');
-        if (text !== "") socketRef.current?.emit('message', text)
+        if (text?.toString().trim() !== "") socketRef.current?.emit('message', text)
     }
 
     return (

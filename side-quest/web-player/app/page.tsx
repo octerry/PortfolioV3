@@ -1,5 +1,6 @@
 import HomepageHeader from "@/components/homepage-header";
 import HomepageSubsection from "@/components/homepage-subsection";
+import UsernameModal from "@/components/username-modal";
 import "@/styles/homepage.css"
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
             <HomepageSubsection title="Morpions" src="/tic-tac-toe-illustration.png" />
             <HomepageSubsection title="Morpions" src="/tic-tac-toe-illustration.png" />
         </main>
+        <UsernameModal/>
     </div>
   );
 }
