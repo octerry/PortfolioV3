@@ -26,7 +26,7 @@ export default function UsernameModal() {
     console.log(username!.trim() != '')
 
     return (
-        <div id="username-modal" className={username!.trim() != '' ? "" : "showing-modal"}>
+        <div id={username!.trim() != '' ? "" : "showing-modal"} className="username-modal">
             <h1 className="modal-title">Bonjour nouveau joueur,</h1>
             <p className="modal-subtitle">Il semble que ce soit la première fois que vous arriviez sur Web Player ou que vous n'ayez pas rentré votre pseudo</p>
             <form className="modal-form" action={(e) => handleSubmit(e)}> 

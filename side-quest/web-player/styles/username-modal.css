@@ -1,4 +1,4 @@
-#username-modal {
+.username-modal {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -6,6 +6,7 @@
     opacity: 0;
     transform: translate(-100%, -100%) scale(.6);
     filter: blur(2px);
+    pointer-events: none;
 
     width: 20rem;
 
@@ -20,10 +21,11 @@
     transition: opacity .3s ease-in-out, transform .3s ease-in-out, filter .3s ease-in-out;
 }
 
-.showing-modal {
-    opacity: 1 !important;
-    transform: translate(-50%, -50%) scale(1) !important;
-    filter: none !important;
+#showing-modal {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    filter: none;
+    pointer-events: all;
 }
 
 #username-modal * {
