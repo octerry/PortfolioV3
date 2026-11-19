@@ -1,3 +1,44 @@
+#homepage-username {
+    margin: 1rem;
+
+    display: flex;
+    align-items: center;
+
+    max-width: 90dvw;
+
+    font-size: .8rem;
+    
+    gap: 1rem;
+}
+
+#username-text {
+    line-height: 100%;
+    margin: 0;
+}
+
+.loading {
+    width: 7rem;
+    height: 1rem;
+
+    border-radius: .3rem;
+
+    background-color: #ffffff60;
+
+    animation: 2s loading linear infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-color: #ffffff60;
+    }
+    50% {
+        background-color: #ffffffA0;
+    }
+    100% {
+        background-color: #ffffff60;
+    }
+}
+
 .username-modal {
     position: absolute;
     left: 50%;

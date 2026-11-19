@@ -7,6 +7,7 @@ export default function Home() {
   return (
     <div>
         <header>
+            <UsernameModal/>
             <HomepageHeader/>
         </header>
         <main id="homepage-main">
@@ -17,7 +18,6 @@ export default function Home() {
             <HomepageSubsection title="Morpions" src="/tic-tac-toe-illustration.png" />
             <HomepageSubsection title="Morpions" src="/tic-tac-toe-illustration.png" />
         </main>
-        <UsernameModal/>
     </div>
   );
 }
