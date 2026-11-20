@@ -18,6 +18,9 @@ export default function UsernameModal() {
         if (username?.trim() != defaultUsername) {
             localStorage.setItem('username', JSON.stringify(username));
         }
+        else {
+            localStorage.removeItem('username');
+        }
     }, [username]);
 
     function handleSubmit(formData:FormData) {
