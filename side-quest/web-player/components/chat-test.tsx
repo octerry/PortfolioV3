@@ -6,22 +6,31 @@ import { useState, useRef, useEffect } from "react";
 export default function ChatTest() {
     const socketRef = useRef<Socket | null>(null);
     const [connected, setConnected] = useState(false);
+    const [username, setUsername] = useState('Anonyme');
+    const [checked, setChecked] = useState(false);
     const [chat, setChat] = useState<string[]>([]);
 
     useEffect(() => {
-        const host = window.location.hostname
+        // Get localstorage username
+        const usernameData = window.localStorage.getItem('username')
+        const tempName = usernameData ? JSON.parse(usernameData) : 'Anonyme'
+        setUsername(tempName)
+
+        // Enable Socket.io connexion
+        const host = window.location.hostname // domaine actuel => adresse.com ou localhost
         const socket = io(`ws://${host}:8080`, {
-            reconnection: true,     // activé par défaut
+            reconnection: true,
             reconnectionAttempts: Infinity,
-            reconnectionDelay: 1000,      // 1s entre les tentatives
+            reconnectionDelay: 1000,
             reconnectionDelayMax: 5000,
-        }) // ${host.split(':')[0]}
+        })
         socketRef.current = socket;
 
         socket.on("connected", () => setConnected(true));
         socket.on("disconnected", () => setConnected(false));
 
-        socketRef.current?.on('message', text => {
+        // Init messages
+        socket.on('message', text => {
             setChat((prev) => [...prev, text])
         })
 
@@ -30,10 +39,21 @@ export default function ChatTest() {
             socketRef.current = null;
         }
     }, []);
+
+    // Init identity
+    useEffect(() => {
+        if (username !== 'Anonyme' && socketRef.current) { // Au cas où username se charge avant socket 
+            const pack = {
+                name:username
+            }
+            socketRef.current?.emit('init', JSON.stringify(pack))
+            setChecked(true);
+        }
+    }, [socketRef.current, username]) 
     
     function handleSend(formData:FormData) {
         const text = formData?.get('content');
-        if (text?.toString().trim() !== "") socketRef.current?.emit('message', text)
+        if (checked && text?.toString().trim() !== "") socketRef.current?.emit('message', text)
     }
 
     return (

@@ -1,4 +1,5 @@
 import { createServer } from 'http';
+import { use } from 'react';
 import { Server, Socket } from 'socket.io';
 
 const http = createServer();
@@ -8,12 +9,20 @@ const io = new Server(http, {
 });
 
 io.on('connection', (socket: Socket) => {
-    console.log(`${socket.id.substring(0,2)} just connected !`)
-    io.emit('message', `${socket.id.substring(0,2)} just connected !`);
+    let username = 'INCONNU';
+
+    socket.on('init', (message) => {
+        const pack = JSON.parse(message)
+
+        username = pack.name;
+
+        console.log(`${pack.name} just connected !`)
+        io.emit('message', `${pack.name} just connected !`);
+    })
 
     socket.on('message', (message) => {
-        console.log(`${socket.id.substring(0,2)} said ${message}`);
-        io.emit('message', `${socket.id.substring(0,2)} said ${message}`);
+        console.log(`${username} said ${message}`);
+        io.emit('message', `${username} said ${message}`);
     })
 })
 
