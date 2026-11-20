@@ -1,0 +1,16 @@
+#topleft-icon {
+    position: absolute;
+    left: 2rem;
+    top: 2rem;
+
+    opacity: .5;
+
+    transform: scale(.8);
+
+    transition: .2s opacity ease-out, .2s transform ease-out;
+}
+
+#topleft-icon:hover {
+    opacity: 1;
+    transform: none;
+}
