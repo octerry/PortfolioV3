@@ -10,19 +10,23 @@ const io = new Server(http, {
 
 io.on('connection', (socket: Socket) => {
     let username = 'INCONNU';
+    let roomCode:string;
 
-    socket.on('init', (message) => {
-        const pack = JSON.parse(message)
+    socket.on('init', (pack, callback) => {
+        username = pack.name
+        roomCode = pack.code
+        
+        socket.join(roomCode); // Le client rejoindra la chambre avec le code
 
-        username = pack.name;
+        console.log(`[${roomCode}] : ${username} just connected !`)
+        io.to(roomCode).emit('message', `${username} just connected !`);
 
-        console.log(`${pack.name} just connected !`)
-        io.emit('message', `${pack.name} just connected !`);
+        callback(200) // OK : 200
     })
 
     socket.on('message', (message) => {
-        console.log(`${username} said ${message}`);
-        io.emit('message', `${username} said ${message}`);
+        console.log(`[${roomCode}] : ${username} said ${message}`);
+        if (roomCode) io.to(roomCode).emit('message', `${username} said ${message}`);
     })
 })
 

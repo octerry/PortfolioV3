@@ -2,12 +2,19 @@
 
 import { io, Socket } from "socket.io-client";
 import { useState, useRef, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
+
+type dataStatus = 'loading' | 'ok' | 'failed';
 
 export default function ChatTest() {
     const socketRef = useRef<Socket | null>(null);
-    const [connected, setConnected] = useState(false);
+    const searchParams = useSearchParams();
+    const code = searchParams.get('code')?.toUpperCase();
+
+    const [connected, setConnected] = useState(false); // Quand Socket est connecté
+    const [checked, setChecked] = useState(false); // Quand Socket a reçu les infos client
+    const [verified, setVerified] = useState<dataStatus>('loading'); // Quand Socket a confirmé la partie
     const [username, setUsername] = useState('Anonyme');
-    const [checked, setChecked] = useState(false);
     const [chat, setChat] = useState<string[]>([]);
 
     useEffect(() => {
@@ -42,15 +49,22 @@ export default function ChatTest() {
 
     // Init identity
     useEffect(() => {
-        if (username !== 'Anonyme' && socketRef.current) { // Au cas où username se charge avant socket 
+        if (username !== 'Anonyme' && checkCode() && socketRef.current) { // Au cas où username se charge avant socket 
             const pack = {
-                name:username
+                name:username,
+                code:code
             }
-            socketRef.current?.emit('init', JSON.stringify(pack))
+            socketRef.current.emit('init', pack, (res:number) => {
+                if (res === 200) setVerified('ok');
+            })
             setChecked(true);
         }
     }, [socketRef.current, username]) 
     
+    function checkCode(): boolean {
+        return typeof code === 'string' && code.length === 4;
+    }
+
     function handleSend(formData:FormData) {
         const text = formData?.get('content');
         if (checked && text?.toString().trim() !== "") socketRef.current?.emit('message', text)
@@ -58,10 +72,13 @@ export default function ChatTest() {
 
     return (
         <div>
-            <form action={handleSend}>
-                <input style={{width:"100%", fontSize:"20px"}} name="content" type="text" placeholder="message"/>
-                <button style={{width:"100%"}} type="submit">send</button>
-            </form>
+            { verified === 'ok'
+                ?   (<form action={handleSend}>
+                        <input style={{width:"100%", fontSize:"20px"}} name="content" type="text" placeholder="message"/>
+                        <button style={{width:"100%"}} type="submit">send</button>
+                    </form>)
+                : <h1>Mauvais code de session</h1>
+            }
             <ul>
                 {
                     chat.map((item) => (
