@@ -1,0 +1,46 @@
+#tictactoe-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    
+    width: 100dvw;
+    height: 100dvh;
+}
+
+#tictactoe-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: .25rem;
+
+    border-radius: 2rem;
+
+    padding: 1rem;
+    background-color: #2B2B2B;
+}
+
+.tictactoe-cell {
+    width: 10rem;
+    height: 10rem;
+
+    background-color: #373737;
+}
+
+.tictactoe-cell:nth-child(1) {
+    border-top-left-radius: 1rem;
+}
+
+.tictactoe-cell:nth-child(3) {
+    border-top-right-radius: 1rem;
+}
+
+.tictactoe-cell:nth-child(7) {
+    border-bottom-left-radius: 1rem;
+}
+
+.tictactoe-cell:nth-child(9) {
+    border-bottom-right-radius: 1rem;
+}
