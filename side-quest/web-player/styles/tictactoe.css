@@ -37,6 +37,10 @@
     transition: .2s background-color ease-out, box-shadow .2s ease-out;
 }
 
+.tictactoe-cell.winning {
+    background-color: #181818;
+}
+
 .turn:hover {
     cursor: pointer;
     background-color: #505050;

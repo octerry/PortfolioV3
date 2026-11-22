@@ -26,6 +26,40 @@ function defineTeam(id:string, idArray:Set<string>|undefined):'x'|'o'|null {
     return null;
 }
 
+function winningCondition(room:string) {
+    const grid = currentPlay[room].grid
+    const xTurn = currentPlay[room].xTurn
+
+    for (let i = 0; i < 3; i += 3) {
+        if (grid[i].state === grid[i+1].state && grid[i].state === grid[i+2].state && grid[i].state) {
+            console.log(grid[i].state)
+            return [i, i+1, i+2]
+        }
+    }
+
+    for (let i = 0; i < 3; i++) {
+        if (grid[i].state === grid[i+3].state && grid[i].state === grid[i+6].state && grid[i].state) {
+            return [i, i+3, i+6]
+        }
+    }
+    
+    if (grid[0].state === grid[4].state && grid[0].state === grid[8].state && grid[0].state) {
+        return [0, 4, 8];
+    }
+
+    if (grid[2].state === grid[4].state && grid[2].state === grid[6].state && grid[2].state) {
+        return [2, 4, 6]
+    }
+
+    for (let i = 0; i < 9; i++) {
+        if (!grid[i].state) {
+            return null
+        }
+    };
+
+    return ''
+}
+
 export default function ticTacToeCheck(socket: Socket, io: Server, room:string) {
     let data = null;
     socket.on('ttto-get', (callback) => {
@@ -51,7 +85,6 @@ export default function ticTacToeCheck(socket: Socket, io: Server, room:string) 
     socket.on('ttto-cell-in', (cell) => {
         const players = io.sockets.adapter.rooms.get(room)
         let team = defineTeam(socket.id, players)
-        let winningCells = null
     
         if (!team) return // Au cas où quelqu'un arriverait à selectionner une case alors qu'iel est pas joueur
 
@@ -65,6 +98,8 @@ export default function ticTacToeCheck(socket: Socket, io: Server, room:string) 
             grid[cell-1] = { key:cell, state:team }
             xTurn = !xTurn;
             currentPlay[room] = {xTurn:xTurn, grid:grid};
+        
+            let winningCells = winningCondition(room);
 
             const data = {
                 cell: cell,
