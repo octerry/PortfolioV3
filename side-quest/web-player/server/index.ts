@@ -1,17 +1,13 @@
 import { createServer } from 'http';
-import { use } from 'react';
 import { Server, Socket } from 'socket.io';
+import ticTacToeCheck from './tictactoe';
+import rooms from './DATA';
 
 const http = createServer();
 
 const io = new Server(http, {
     cors: { origin: "*" }
 });
-
-interface RoomState {
-    [key:string] : string[]
-}
-let rooms : RoomState = {  };
 
 io.on('connection', (socket: Socket) => {
     let username = 'INCONNU';
@@ -25,6 +21,8 @@ io.on('connection', (socket: Socket) => {
 
         rooms[roomCode] ? rooms[roomCode].push(username) : rooms[roomCode] = [username];
         console.log(rooms)
+
+        ticTacToeCheck(socket, io, roomCode);
 
         console.log(`[${roomCode}] : ${username} just connected !`)
         io.to(roomCode).emit('message', `${username} just connected !`);

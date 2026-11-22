@@ -1,26 +1,63 @@
 import '@/styles/tictactoe.css'
+import Image from 'next/image';
+import { useEffect, useState } from 'react';
+import { Socket } from 'socket.io-client';
 
-export default function TicTacToe() {
-    let grids = [
-        {key:1},
-        {key:2},
-        {key:3},
-        {key:4},
-        {key:5},
-        {key:6},
-        {key:7},
-        {key:8},
-        {key:9}
+interface Props {
+    socket:Socket | null
+    username:string
+}
+interface CellInterface {
+    key:number,
+    state: 'x' | 'o' | null
+}
+
+export default function TicTacToe({ socket, username }:Props) {
+    const gridsTemplate: CellInterface[] = [
+        {key:1, state:null},
+        {key:2, state:null},
+        {key:3, state:null},
+        {key:4, state:null},
+        {key:5, state:null},
+        {key:6, state:null},
+        {key:7, state:null},
+        {key:8, state:null},
+        {key:9, state:null}
     ];
+    const [grid, setGrid] = useState(gridsTemplate);
+    const [turn, setTurn] = useState(username);
+
+    useEffect(() => {
+
+        socket?.emit('ttto-get', (play:{turn:string, grid:CellInterface[]}) => {
+            if (play.grid) setGrid(play.grid)
+            setTurn(play.turn)
+        })
+    }, [document.hasFocus(), socket])
+
+    socket?.on('ttto-cell-out', (data) => {
+        setTurn(data.turn)
+        setGrid(prev =>
+            prev.map((cell, i) => 
+                i === data.cell - 1 ? {...cell, state: data.team} : cell
+            )
+        )
+    })
+
+    function handleClick(cell:number) {
+        socket?.emit('ttto-cell-in', cell);
+    }
 
     return (
         <div id="tictactoe-area">
             <div id='tictactoe-grid'>
-                { grids.map((item) => {
-                    return <div key={item.key} className='tictactoe-cell'></div>
-                })}
+                { grid.map((item) => 
+                    <div key={item.key} onClick={() => handleClick(item.key)} className={`tictactoe-cell ${turn === username ? 'turn' : ''}`}>
+                        <Image className={`ttto-state ${item.state ? '' : ' hidden'}`} src={ item.state === 'x' ? 'ttt-cross.svg' : 'ttt-circle.svg' } alt='icon' width={0} height={0} /> 
+                    </div>
+                )}
             </div>
-            <h2>C'est votre tour</h2>
+            <h2>{ turn === username ? "C'est votre tour" : `C'est au tour de ${turn}` }</h2>
         </div>
     )
 }
