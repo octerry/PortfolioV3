@@ -30,9 +30,11 @@ export default function TicTacToe({ socket, username }:Props) {
     const [winning, setWinning] = useState<Winning>(null);
 
     useEffect(() => {
-        socket?.emit('ttto-get', (play:{turn:string, grid:CellInterface[]}) => {
+        socket?.emit('ttto-get', (play:{turn:string, grid:CellInterface[], winning:Winning}) => {
             if (play.grid) setGrid(play.grid)
             setTurn(play.turn)
+            console.log(play.winning)
+            setWinning(play.winning)
         })
     }, [document.hasFocus(), socket])
 
@@ -44,6 +46,7 @@ export default function TicTacToe({ socket, username }:Props) {
             )
         )
         setWinning(data.winningCells)
+        console.log(winning)
     })
 
     function handleClick(cell:number) {
@@ -61,6 +64,7 @@ export default function TicTacToe({ socket, username }:Props) {
             </div>
             <h2>{
                 Array.isArray(winning) ? `Victoire de ${turn}` :
+                winning === '' ? 'Match null' :
                 turn === username ? "C'est votre tour" : `C'est au tour de ${turn}` 
                 }</h2>
         </div>

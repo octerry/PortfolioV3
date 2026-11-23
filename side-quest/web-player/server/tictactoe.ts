@@ -27,12 +27,12 @@ function defineTeam(id:string, idArray:Set<string>|undefined):'x'|'o'|null {
 }
 
 function winningCondition(room:string) {
-    const grid = currentPlay[room].grid
-    const xTurn = currentPlay[room].xTurn
+    if (typeof(currentPlay[room]) === 'undefined') return null;
 
-    for (let i = 0; i < 3; i += 3) {
+    const grid = currentPlay[room].grid
+
+    for (let i = 0; i < 6; i += 3) {
         if (grid[i].state === grid[i+1].state && grid[i].state === grid[i+2].state && grid[i].state) {
-            console.log(grid[i].state)
             return [i, i+1, i+2]
         }
     }
@@ -62,6 +62,7 @@ function winningCondition(room:string) {
 
 export default function ticTacToeCheck(socket: Socket, io: Server, room:string) {
     let data = null;
+    let winning = null;
     socket.on('ttto-get', (callback) => {
         const players = io.sockets.adapter.rooms.get(room)
         let play = currentPlay[room]
@@ -70,13 +71,15 @@ export default function ticTacToeCheck(socket: Socket, io: Server, room:string) 
 
             data = {
                 grid: play.grid,
-                turn: turn
+                turn: turn,
+                winning: winningCondition(room)
             }
         }
         else {
             data = {
                 grid: null,
-                turn: rooms[room][0]
+                turn: rooms[room][0],
+                winning: null,
             }
         }
         callback(data)
@@ -98,13 +101,11 @@ export default function ticTacToeCheck(socket: Socket, io: Server, room:string) 
             grid[cell-1] = { key:cell, state:team }
             xTurn = !xTurn;
             currentPlay[room] = {xTurn:xTurn, grid:grid};
-        
-            let winningCells = winningCondition(room);
 
             const data = {
                 cell: cell,
                 team: team,
-                winningCells: winningCells,
+                winningCells: winningCondition(room),
                 turn: turn
             }
 
