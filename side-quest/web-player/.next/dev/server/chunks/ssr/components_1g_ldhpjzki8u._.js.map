@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///home/octerry/Documents/Perso/Projets/PortfolioV3/side-quest/web-player/components/modal-create.tsx"],"sourcesContent":["\"use client\"\n\nexport default function ModalCreate() {\n    return <button className=\"modal-create-button\">Créer</button>\n}"],"names":["ModalCreate","className"],"mappings":";;;;;AAAA;;AAEe,SAASA;IACpB,qBAAO,8OAAC;QAAOC,WAAU;kBAAsB;;;;;;AACnD"}},
+    {"offset": {"line": 25, "column": 0}, "map": {"version":3,"sources":["file:///home/octerry/Documents/Perso/Projets/PortfolioV3/side-quest/web-player/components/modal-join.tsx"],"sourcesContent":["\"use client\"\n\nimport Form from \"next/form\"\n\nexport default function ModalJoin() {\n    return (\n        <div className=\"subsection-modal-join\">\n            <h3 className=\"modal-join-title\">Rejoindre</h3>\n            <Form action=\"/party\">\n                <input className=\"modal-join-input\" name=\"code\" type=\"text\" maxLength={4}/>\n            </Form>\n        </div>\n    )\n}"],"names":["ModalJoin","className","action","name","type","maxLength"],"mappings":";;;;;AAEA;AAFA;;;AAIe,SAASA;IACpB,qBACI,8OAAC;QAAIC,WAAU;;0BACX,8OAAC;gBAAGA,WAAU;0BAAmB;;;;;;0BACjC,8OAAC,uKAAI;gBAACC,QAAO;0BACT,cAAA,8OAAC;oBAAMD,WAAU;oBAAmBE,MAAK;oBAAOC,MAAK;oBAAOC,WAAW;;;;;;;;;;;;;;;;;AAIvF"}}]
+}

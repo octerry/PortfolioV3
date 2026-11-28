@@ -1,0 +1,12 @@
+/* [project]/styles/homepage.css [app-client] (css) */
+#homepage-main {
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height: 100%;
+  padding: 2px;
+  display: flex;
+}
+
+/*# sourceMappingURL=styles_homepage_css_1igg3k2-ikub5._.single.css.map*/

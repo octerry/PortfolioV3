@@ -1,0 +1,30 @@
+/* [project]/styles/homepage-header.css.css [app-client] (css) */
+#homepage-head-section {
+  margin: var(--unit);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+#homepage-icon {
+  height: calc(var(--unit) * 3);
+  width: calc(var(--unit) * 3);
+}
+
+#homepage-title {
+  font-family: Inter;
+  font-size: calc(var(--unit) * 3);
+  margin: 0 0 0 1vw;
+}
+
+/* [project]/styles/homepage.css.css [app-client] (css) */
+#homepage-main {
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+  padding: 2px;
+  display: flex;
+}
+
+/*# sourceMappingURL=styles_1tglyi7l0l35s._.css.map*/

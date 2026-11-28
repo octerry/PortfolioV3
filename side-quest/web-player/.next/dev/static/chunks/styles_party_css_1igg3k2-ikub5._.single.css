@@ -1,0 +1,40 @@
+/* [project]/styles/party.css [app-client] (css) */
+#party-inner {
+  justify-content: center;
+  align-items: center;
+  width: 100dvw;
+  height: 100dvh;
+  display: flex;
+}
+
+#topleft-icon {
+  opacity: .5;
+  transition: opacity .2s ease-out, transform .2s ease-out;
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  transform: scale(.8);
+}
+
+#topleft-icon:hover {
+  opacity: 1;
+  transform: none;
+}
+
+#throbber {
+  width: 6rem;
+  height: 6rem;
+  animation: 1.5s linear infinite spinning;
+}
+
+@keyframes spinning {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*# sourceMappingURL=styles_party_css_1igg3k2-ikub5._.single.css.map*/

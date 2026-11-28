@@ -1,0 +1,30 @@
+/* [project]/app/globals.css.css [app-client] (css) */
+:root {
+  --primary-bg: #fff;
+  --secondary-bg: #b3b3b3;
+  --foreground: #171717;
+  --icon-color: #a376d7;
+  --unit: calc(1dvw + 1dvh);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-bg: #242424;
+    --secondary-bg: #2b2b2b;
+    --foreground: #ededed;
+    --icon-color: var(--foreground);
+  }
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--primary-bg);
+  color: var(--foreground);
+  font-family: Inter;
+}
+
+/*# sourceMappingURL=app_globals_css_css_1igg3k2-ikub5._.single.css.map*/

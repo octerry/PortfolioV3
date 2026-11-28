@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///home/octerry/Documents/Perso/Projets/PortfolioV3/side-quest/web-player/app/party/page.tsx"],"sourcesContent":["'use client'\n\nimport { useSearchParams } from \"next/navigation\"\nimport { Suspense } from \"react\";\n\nexport default function Party() {\n    const searchParams = useSearchParams()\n    const code = searchParams.get('code');\n\n    return (\n        <Suspense fallback={<p>Loading search…</p>}>\n            <h1>{code?.toUpperCase()}</h1>\n        </Suspense>\n    )\n}"],"names":["Party","searchParams","code","get","fallback","toUpperCase"],"mappings":";;;;;AAEA;AACA;AAHA;;;;AAKe,SAASA;IACpB,MAAMC,eAAe,IAAA,qJAAe;IACpC,MAAMC,OAAOD,aAAaE,GAAG,CAAC;IAE9B,qBACI,8OAAC,iNAAQ;QAACC,wBAAU,8OAAC;sBAAE;;;;;;kBACnB,cAAA,8OAAC;sBAAIF,MAAMG;;;;;;;;;;;AAGvB"}}]
+}

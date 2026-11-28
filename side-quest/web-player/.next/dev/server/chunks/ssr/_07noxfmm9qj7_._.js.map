@@ -1,0 +1,8 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///home/octerry/Documents/Perso/Projets/PortfolioV3/side-quest/web-player/app/party/page.tsx"],"sourcesContent":["'use client'\n\nimport Anteroom from \"@/components/anteroom\";\nimport { Suspense } from \"react\";\n\nexport default function Party() {\n    return (\n        <Suspense fallback={<p>Loading...</p>}>\n            <Anteroom/>\n        </Suspense>\n    )\n}"],"names":["Party","fallback"],"mappings":";;;;;AAEA;AACA;AAHA;;;;AAKe,SAASA;IACpB,qBACI,8OAAC,iNAAQ;QAACC,wBAAU,8OAAC;sBAAE;;;;;;kBACnB,cAAA,8OAAC,kIAAQ;;;;;;;;;;AAGrB"}},
+    {"offset": {"line": 38, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":""}},
+    {"offset": {"line": 42, "column": 0}, "map": {"version":3,"sources":["file:///home/octerry/Documents/Perso/Projets/PortfolioV3/side-quest/web-player/node_modules/next/src/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.ts"],"sourcesContent":["module.exports = (\n  require('../../module.compiled') as typeof import('../../module.compiled')\n).vendored['react-ssr']!.ReactJsxDevRuntime\n"],"names":["module","exports","require","vendored","ReactJsxDevRuntime"],"mappings":"AAAAA,OAAOC,OAAO,GACZC,QAAQ,4HACRC,QAAQ,CAAC,YAAY,CAAEC,kBAAkB","ignoreList":[0]}}]
+}

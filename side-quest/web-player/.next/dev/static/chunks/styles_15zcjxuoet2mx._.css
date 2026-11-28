@@ -1,0 +1,133 @@
+/* [project]/styles/homepage-header.css [app-client] (css) */
+#homepage-head-section {
+  margin: var(--unit);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+#homepage-icon {
+  height: calc(var(--unit) * 3);
+  width: calc(var(--unit) * 3);
+  fill: var(--icon-color);
+}
+
+#homepage-title {
+  font-family: Inter;
+  font-size: calc(var(--unit) * 3);
+  margin: 0 0 0 1vw;
+}
+
+/* [project]/styles/homepage-subsection.css [app-client] (css) */
+.homepage-subsection {
+  text-align: center;
+  background-color: var(--secondary-bg);
+  border-radius: 5px;
+  width: 240px;
+  height: 200px;
+  transition: transform .2s ease-out, background-color .2s ease-in-out;
+}
+
+.homepage-subsection:hover {
+  cursor: pointer;
+  background-color: #363636;
+  transform: scale(.95);
+}
+
+.homepage-subsection:hover img, .homepage-subsection:hover h2 {
+  filter: blur(1px);
+}
+
+.homepage-subsection img {
+  width: 120px;
+  height: 120px;
+  margin-top: 30px;
+  transition: filter .2s ease-out;
+}
+
+.homepage-subsection h2 {
+  margin: 10px 0 0;
+  font-family: Inter;
+  font-size: 20px;
+  transition: filter .2s ease-out;
+}
+
+.homepage-subsection:hover .subsection-modal {
+  opacity: 1;
+  pointer-events: all;
+  filter: none;
+  transform: translate(-50%, -50%) scale(.8);
+}
+
+.subsection-modal {
+  opacity: 0;
+  pointer-events: none;
+  filter: blur(2px);
+  border-radius: 8px;
+  width: 150px;
+  padding: 10px;
+  transition: opacity .3s ease-in-out, filter .3s ease-in-out, transform .3s ease-in-out;
+  position: relative;
+  bottom: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.subsection-modal-join {
+  background-color: #93939370;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.modal-join-title {
+  margin: 0;
+  font-family: Inter;
+  font-size: 26px;
+  font-weight: 300;
+  line-height: 100%;
+}
+
+.modal-join-input {
+  border: 1px solid #ffffff50;
+  border-radius: 3px;
+  width: 40%;
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 300;
+  transition: border .2s ease-out;
+}
+
+.modal-join-input:hover {
+  border: 1px solid #ffffff90;
+}
+
+.modal-create-button {
+  color: var(--foreground);
+  background-color: #93939370;
+  border: none;
+  border-radius: 8px;
+  margin-top: 10px;
+  font-family: Inter;
+  font-size: 24px;
+  font-weight: 300;
+  transition: transform .2s ease-out, background-color .2s ease-out;
+}
+
+.modal-create-button:hover {
+  cursor: pointer;
+  background-color: #939393;
+  transform: scale(1.05);
+}
+
+/* [project]/styles/homepage.css [app-client] (css) */
+#homepage-main {
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height: 100%;
+  padding: 2px;
+  display: flex;
+}
+
+/*# sourceMappingURL=styles_15zcjxuoet2mx._.css.map*/

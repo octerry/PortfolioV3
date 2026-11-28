@@ -1,0 +1,21 @@
+/* [project]/styles/homepage-header.css.css [app-client] (css) */
+#homepage-head-section {
+  margin: var(--unit);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+#homepage-icon {
+  height: calc(var(--unit) * 3);
+  width: calc(var(--unit) * 3);
+  fill: var(--icon-color);
+}
+
+#homepage-title {
+  font-family: Inter;
+  font-size: calc(var(--unit) * 3);
+  margin: 0 0 0 1vw;
+}
+
+/*# sourceMappingURL=styles_homepage-header_css_css_1igg3k2-ikub5._.single.css.map*/

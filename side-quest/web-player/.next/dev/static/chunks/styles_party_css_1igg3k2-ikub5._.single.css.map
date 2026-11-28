@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/styles/party.css"],"sourcesContent":["#party-inner {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n\n    width: 100dvw;\n    height: 100dvh;\n}\n\n#topleft-icon {\n    position: absolute;\n    left: 2rem;\n    top: 2rem;\n\n    opacity: .5;\n\n    transform: scale(.8);\n\n    transition: .2s opacity ease-out, .2s transform ease-out;\n}\n\n#topleft-icon:hover {\n    opacity: 1;\n    transform: none;\n}\n\n#throbber {\n    width: 6rem;\n    height: 6rem;\n\n    animation: spinning 1.5s infinite linear;\n}\n\n@keyframes spinning {\n    0% {\n        transform: rotate(0);\n    }\n    100% {\n        transform: rotate(360deg);\n    }\n}"],"names":[],"mappings":"AAAA;;;;;;;;AASA;;;;;;;;;AAYA;;;;;AAKA;;;;;;AAOA"}}]
+}

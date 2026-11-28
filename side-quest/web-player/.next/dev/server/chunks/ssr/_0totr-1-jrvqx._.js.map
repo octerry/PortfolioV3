@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///home/octerry/Documents/Perso/Projets/PortfolioV3/side-quest/web-player/app/party/page.tsx"],"sourcesContent":["'use client'\n\nimport GameLayout from \"@/components/game-layout\";\nimport { Suspense } from \"react\";\n\nexport default function Party() {\n    return (\n        <Suspense fallback={<p>Loading...</p>}>\n            <GameLayout/>\n        </Suspense>\n    )\n}"],"names":["Party","fallback"],"mappings":";;;;;AAEA;AACA;AAHA;;;;AAKe,SAASA;IACpB,qBACI,8OAAC,iNAAQ;QAACC,wBAAU,8OAAC;sBAAE;;;;;;kBACnB,cAAA,8OAAC,wIAAU;;;;;;;;;;AAGvB"}},
+    {"offset": {"line": 39, "column": 0}, "map": {"version":3,"sources":["file:///home/octerry/Documents/Perso/Projets/PortfolioV3/side-quest/web-player/components/game-layout.tsx"],"sourcesContent":["import { useSearchParams } from \"next/navigation\"\n\nexport default function GameLayout() {\n    const searchParams = useSearchParams()\n    const code = searchParams.get('code');\n\n    return (\n        <div>\n            \n        </div>\n    )\n}"],"names":["GameLayout","searchParams","code","get"],"mappings":";;;;;AAAA;;;AAEe,SAASA;IACpB,MAAMC,eAAe,IAAA,qJAAe;IACpC,MAAMC,OAAOD,aAAaE,GAAG,CAAC;IAE9B,qBACI,8OAAC;;;;;AAIT"}}]
+}

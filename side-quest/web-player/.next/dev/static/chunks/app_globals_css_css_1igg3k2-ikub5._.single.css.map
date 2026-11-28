@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/app/globals.css.css"],"sourcesContent":[":root {\n  --primary-bg: #ffffff;\n  --secondary-bg: #b3b3b3;\n  --foreground: #171717;\n  --icon-color: #a376d7;\n  --unit: calc(1dvw + 1dvh);\n}\n\n@media (prefers-color-scheme: dark) {\n  :root {\n    --primary-bg: #242424;\n    --secondary-bg: #2B2B2B;\n    --foreground: #ededed;\n    --icon-color: var(--foreground);\n  }\n}\n\nhtml, body {\n    margin: 0;\n    padding: 0;\n}\n\nbody {\n  background: var(--primary-bg);\n  color: var(--foreground);\n  font-family: \"Inter\";\n}"],"names":[],"mappings":"AAAA;;;;;;;;AAQA;EACE;;;;;;;;AAQF;;;;;AAKA"}}]
+}

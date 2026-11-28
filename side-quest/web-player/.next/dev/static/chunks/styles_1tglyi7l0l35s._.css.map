@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["file:///home/octerry/Documents/Perso/Projets/PortfolioV3/side-quest/web-player/styles/homepage-header.css.css"],"sourcesContent":["#homepage-head-section {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    margin: var(--unit);\n}\n\n#homepage-icon {\n    height: calc(var(--unit) * 3);\n    width: calc(var(--unit) * 3);;\n}\n\n#homepage-title {\n    margin: 0;\n    margin-left: 1vw;\n    font-family: \"Inter\";\n    font-size: calc(var(--unit) * 3)\n}"],"names":[],"mappings":"AAAA;;;;;;;AAOA;;;;;AAKA"}},
+    {"offset": {"line": 20, "column": 0}, "map": {"version":3,"sources":["file:///home/octerry/Documents/Perso/Projets/PortfolioV3/side-quest/web-player/styles/homepage.css.css"],"sourcesContent":["#homepage-main {\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: center;\n    align-items: center;\n    gap: 3px;\n    padding: 2px;\n}"],"names":[],"mappings":"AAAA"}}]
+}
